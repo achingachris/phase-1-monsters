@@ -26,7 +26,7 @@ let renderMonsterForm = () => {
 
 // Fetches the monster details / info using the url provided.
 let fetchMonsters = () => {
-  fetch(`http://localhost:5500/monsters/?_limit=50&_page=${page}`)
+  fetch(`http://localhost:3000/monsters/?_limit=50&_page=${page}`)
     .then((resp) => resp.json())
     .then((monsters) => {
       renderMonsterDetails(monsters)
@@ -74,7 +74,7 @@ let addNewMonster = (e) => {
     body: JSON.stringify(newMonster),
   }
 
-  return fetch('http://localhost:5500/monsters', configurationObject)
+  return fetch('http://localhost:3000/monsters', configurationObject)
     .then((resp) => resp.json())
     .then((monster) => {
       createMonsterDetailsElement(monster)
